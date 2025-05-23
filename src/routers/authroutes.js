@@ -6,16 +6,18 @@ router.get('/google', passport.authenticate('google', { scope: ['profile', 'emai
 );
 
 router.get('/auth/google/dashboard', passport.authenticate('google'),
-    (req, res) => {res.redirect('/dashboard.html');
-
-    }); 
+    (req, res) => {
+        res.redirect('/dashboard.html');
+    }
+); 
 
 router.get('/facebook', passport.authenticate('facebook'));
-  
-router.get('/auth/facebook/dashboard', passport.authenticate('facebook', 
-    { failureRedirect: '/login' }, {successRedirect: '/dashboard'}),
-);
 
+router.get('/auth/facebook/dashboard', passport.authenticate('facebook'),
+    (req, res) => {
+        res.redirect('/dashboard.html');
+    }
+); 
 module.exports = router;
 
 
