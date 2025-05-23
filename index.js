@@ -22,6 +22,10 @@ app.use('/api/v1/user', userRoutes);
 app.use('/auth', authRoutes); 
 app.use(express.static('views'));
 
+app.get('/dashboard', (req, res) => {
+  res.sendFile(__dirname + '/views/dashboard.html');
+});
+
 
 
 app.listen(PORT, () =>{
