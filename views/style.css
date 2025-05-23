@@ -27,7 +27,12 @@ h1 {
 }
 
 .google-btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 8px;
   background: #4285F4;
   color: #fff;
   padding: 10px 20px;
@@ -38,7 +43,27 @@ h1 {
 }
 
 .google-btn img {
-  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.facebook-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 8px;
+  background: #1877f3;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 10px 0;
+  border: none;
+}
+
+.facebook-btn img {
   margin-right: 8px;
 }
 
