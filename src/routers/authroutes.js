@@ -13,7 +13,7 @@ router.get('/auth/google/dashboard', passport.authenticate('google'),
 router.get('/facebook', passport.authenticate('facebook'));
   
 router.get('/auth/facebook/dashboard', passport.authenticate('facebook', 
-    { failureRedirect: '/login' }, {successRedirect: '/dashboard.html'}),
+    { failureRedirect: '/login' }, {successRedirect: '/dashboard'}),
 );
 
 module.exports = router;
