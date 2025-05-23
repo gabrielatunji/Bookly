@@ -6,7 +6,7 @@ const flutterwave = require('../services/flutterwave');
 const { generatePaymentLink } = require('../services/flutterwave'); 
 
 exports.usersignup = async (req, res) => {
-    const {name, email, password} = req.body; 
+    const {firstName, email, password} = req.body; 
     try{
         if(!email || !password){
             return res.status(400).json({message: "Input your Login Credentials"})
@@ -16,9 +16,9 @@ exports.usersignup = async (req, res) => {
             return res.status(403).json({message: "User already exists"})
             }
             const hashedPassword = await bcrypt.hash(password, 10); 
-            const newUser = new User({name, email, password: hashedPassword})
+            const newUser = new User({firstName, email, password: hashedPassword})
             await newUser.save(); 
-        return res.status(201).json({message: "Signed up Successfully", data: name, email})
+        return res.status(201).json({message: "Signed up Successfully", data: firstName, email})
     }catch(error){
         console.log(error)
         res.status(500).json({message: "Server Error"})
