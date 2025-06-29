@@ -62,8 +62,11 @@ exports.saveItems = async (req, res) => {
             { public_id: `image/${parent.name}_${parent.email}`,
               folder: 'Bookly'
            }); 
+           
         const parentSave = await User.findOneAndUpdate({_id}, 
-            {location: location, image: uploadResult.secure_url, savingAmount: savingAmount}, 
+            {location: location, 
+            image: uploadResult.secure_url,
+            savingAmount: savingAmount}, 
             {new: true}); 
             return res.status(201).json({message: `You will need to save ${parentSave.savingAmount} towards the item`})
        }catch(error){
