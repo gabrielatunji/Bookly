@@ -1,4 +1,4 @@
-﻿# project-bookly
+﻿# Bookly
 
 Bookly
 Bookly is a web application that allows users to save items, make payments, and manage their accounts. It integrates Google OAuth for authentication and Flutterwave for secure payment processing.
@@ -36,3 +36,4 @@ Axios
 dotenv
 bcrypt.js
 Cloudinary (for image uploads)
+
